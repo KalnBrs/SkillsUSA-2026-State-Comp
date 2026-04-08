@@ -53,3 +53,5 @@ Show help:
 ```bash
 node index.js --help
 ```
+
+![alt text](image.png)
