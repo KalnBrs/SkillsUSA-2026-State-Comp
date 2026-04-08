@@ -1,3 +1,9 @@
+/**
+ * Generate the fibonacci sequence based on the provided length
+ * 
+ * @param int n: the size of the sequence
+ * @returns an array that contains each number on a new index 
+ */
 function genFib(n) {
   if (n <= 0) return [];
   if (n <= 1) return [1];
@@ -35,14 +41,18 @@ Help for Fibonacci Generator:
   process.exit(0);
 }
 
+// This is finding the count argument 
 let count = 0;
 const indexes = [args.indexOf("-c"), args.indexOf("--count")]
+
+// Checks if the arguments are there and if there are more than 1 argument
 if (indexes[0] != -1 || indexes[1] != -1) {
   if (indexes[0] != -1 && indexes[1] != -1) {
     console.error("The program only takes one count argument")
     process.exit(1);
   }
 
+  // Gets the index of the count and sets the count variable to that index
   if (indexes[0] != -1 && Number.isInteger(parseInt(args[indexes[0]+1]))) {
     countIdx = indexes[0] + 1;
     count = args[countIdx]
@@ -53,6 +63,7 @@ if (indexes[0] != -1 || indexes[1] != -1) {
     console.error("You must define a count after the -c or --count")
   }
 
+  // Calls the fibonacci function returning an array 
   const fibArr = genFib(count)
 
   if (args.includes("--last-only")) {
@@ -64,6 +75,7 @@ if (indexes[0] != -1 || indexes[1] != -1) {
     process.exit(0)
   }
 
+  // The printing of the sequence, prints each element or prints the retString based on the arguments provided
   let returnStr = ""
   for (let i = 1; i <= count; i++) {
     if (args.includes("--one-line")) {
@@ -76,8 +88,7 @@ if (indexes[0] != -1 || indexes[1] != -1) {
       }
     } else {
       if (args.includes("--numbering")) {
-        if (i == count) console.log(`${i}:${fibArr[i-1]} `);
-        else console.log(`${i}:${fibArr[i-1]} `);
+        console.log(`${i}:${fibArr[i-1]} `);
       } else {
         console.log(`${fibArr[i-1]} `);
       }
@@ -85,7 +96,7 @@ if (indexes[0] != -1 || indexes[1] != -1) {
   }
   console.log(returnStr)
 } else {
-  console.error("The program requires that you specify a count ")
+  console.error("The program requires that you specify a count use --help for help")
 }
 
 
