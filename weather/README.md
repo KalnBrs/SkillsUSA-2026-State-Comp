@@ -1,7 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-[alt text](image.png)
-[alt text1](image-1.png)
+Images for Proof:
+![alt text](image.png)
+![alt text1](image-1.png)
 
 ## Getting Started
 
